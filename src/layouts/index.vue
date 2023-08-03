@@ -9,7 +9,7 @@
       </div>
     </div>
   </main>
-  </el-scrollbar>
+  </el-scrollbar>                                                                              
 </template>
 
 <script setup>
@@ -28,7 +28,7 @@ import AppSidebar from "./Sidebar.vue";
 .content-wrapper {
   max-width: 800px;
   margin: 0 auto;
-  padding: 32px 15px 96px;
+  padding: 32px 15px;
 }
 
 @media screen and (min-width: 960px) {
@@ -40,7 +40,7 @@ import AppSidebar from "./Sidebar.vue";
 
 @media screen and (min-width: 768px) {
   .content-wrapper {
-    padding: 48px 32px 96px;
+    padding: 48px 32px;
   }
 }
 </style>

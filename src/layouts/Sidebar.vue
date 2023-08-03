@@ -39,6 +39,11 @@ const toggle = ref(false);
   left: 0;
 }
 
+.sidebar.open {
+  transform: translate(0);
+  width: 300px;
+}
+
 .sidebar .sidebar-groups {
   padding: 0 0 5rem;
 }
@@ -52,11 +57,6 @@ const toggle = ref(false);
   background-color: transparent;
   padding: 10px;
   border: 0;
-}
-
-.sidebar.open {
-  transform: translate(0);
-  width: 300px;
 }
 
 @media screen and (min-width: 960px) {
