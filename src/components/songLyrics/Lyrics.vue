@@ -1,17 +1,35 @@
 <template>
   <el-collapse v-model="activeNames">
     <!-- Player Controls -->
-    <el-collapse-item title="Controls" name="1">
+    <el-collapse-item
+      title="Controls"
+      name="1"
+    >
       <el-button @click="emits('seekTo', lrc.previousLine(currentTime).time)">Previous</el-button>
       <el-button @click="emits('toggleStatus')">Pause/Play</el-button>
       <el-button @click="emits('seekTo', lrc.nextLine(currentTime).time)">Next</el-button>
-      <el-switch v-model="repeat" @change="repeatCurrentLine" active-text="Repeat" class="switch" />
-      <el-switch v-model="foucs" active-text="Focus" class="switch" />
+      <el-switch
+        v-model="repeat"
+        @change="repeatCurrentLine"
+        active-text="Repeat"
+        class="switch"
+      />
+      <el-switch
+        v-model="foucs"
+        active-text="Focus"
+        class="switch"
+      />
     </el-collapse-item>
 
     <!-- Lyrics Style Settings -->
-    <el-collapse-item title="Settings" name="2">
-      <el-form :inline="true" :model="settings">
+    <el-collapse-item
+      title="Settings"
+      name="2"
+    >
+      <el-form
+        :inline="true"
+        :model="settings"
+      >
         <el-form-item label="Alignment">
           <el-select v-model="settings.alignment">
             <el-option
@@ -47,7 +65,7 @@
       class="lrc__line"
       ref="lines"
       v-for="(line, index) in lrc.lines"
-      :class="{'lrc__line--active': index === currentIndex}"
+      :class="{ 'lrc__line--active': index === currentIndex }"
       :key="line"
       @click="emits('seekTo', line.time)"
     >
@@ -57,7 +75,7 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "@vue/reactivity";
+import { reactive, ref } from "vue";
 import { watch, watchEffect } from "vue";
 import LRC from "lrc.js/dist/lrc.esm.js";
 

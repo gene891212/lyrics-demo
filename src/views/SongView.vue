@@ -1,9 +1,9 @@
 <template>
-  <SongLyrics />
+  <NewPlayer />
 </template>
 
 <script setup>
-import SongLyrics from '@/components/songLyrics/Player.vue';
+import NewPlayer from "@/components/songLyrics/NewPlayer.vue";
 </script>
 
 <style>

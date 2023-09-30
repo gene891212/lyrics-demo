@@ -83,7 +83,7 @@ const currentTime = ref(0);
 const { onReady, togglePlay } = usePlayer("yFPmQsDOe40", ytPlayer, {
   playerVars: {
     rel: 0,
-  }
+  },
 });
 
 let player;
@@ -91,7 +91,7 @@ onReady((event) => {
   player = event.target;
 
   setInterval(() => {
-    currentTime.value = player.getCurrentTime()
+    currentTime.value = player.getCurrentTime();
   }, 100);
 });
 
